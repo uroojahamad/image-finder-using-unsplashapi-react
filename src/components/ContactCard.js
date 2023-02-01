@@ -55,9 +55,9 @@ const ContactCard = () => {
                         return <Card
                             key={data.id}
                             imageUrl={data.urls.thumb}
-                            name={`Mr. ${data.user.first_name} ${data.user.last_name}`}
+                            name={data.user.name}
                             phoneNumber="(212) 555-1234"
-                            email="mr.whiskaz@catnap.meow"
+                            email={`${data.user.username}@xyz.abc`}
                         />
                     })
                 }
