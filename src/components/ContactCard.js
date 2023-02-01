@@ -12,11 +12,10 @@ const ContactCard = () => {
     const [loading, setLoading] = useState(false);
     const [searchText, setSeacrhText] = useState('');
 
-    const fecthDataFromAPI = () => {
-        axios.get(`https://api.unsplash.com/search/photos?page=1&query=${searchText === '' ? 'husky' : searchText}&client_id=JHqEB7c-97RWsnUQWyOQIpF04Cr0KVJmHP5oN4n5xRs`)
-            .then(response => setCardData(response?.data?.results))
-            .catch(error => console.error())
-            .finally(() => setLoading(false))
+    const fecthDataFromAPI =async () => {
+       const response = await axios.get(`https://api.unsplash.com/search/photos?page=1&query=${searchText === '' ? 'husky' : searchText}&client_id=JHqEB7c-97RWsnUQWyOQIpF04Cr0KVJmHP5oN4n5xRs`)
+        setCardData(response?.data?.results)
+        setLoading(false)
     }
 
     useEffect(() => {
@@ -24,7 +23,7 @@ const ContactCard = () => {
         fecthDataFromAPI();
     }, [])
 
-    function search(){
+    const search = () =>{
         fecthDataFromAPI();
     }
     console.log(cardData);

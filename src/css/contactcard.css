@@ -25,7 +25,7 @@
     object-fit: cover;
 }
 
-.contact-card > h3 {
+.contact-card > h2 {
     font-weight: 700;
     font-size: 18px;
     margin-top: 15px;
@@ -83,3 +83,11 @@
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .contact-card{
+        flex-basis: unset;
+        width: 80% !important;
+    }
+  }

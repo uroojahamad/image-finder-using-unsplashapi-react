@@ -5,7 +5,7 @@ const Card = (props) => {
     return (
         <div className="contact-card">
             <img src={props.imageUrl} alt={props.name}/>
-            <h3>{props.name}</h3>
+            <h2>{props.name}</h2>
             <div className="info-group">
                 <img src={require("../images/phone-icon.png")} alt="phone-icon"/>
                 <p>{props.phoneNumber}</p>
