@@ -1,0 +1,85 @@
+.contact-card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.contact-card {
+    flex-basis: 225px;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
+    padding-bottom: 1px;
+    background-color: white;
+}
+
+.contact-card > img {
+    width: 100%;
+    max-height: 70%;
+    align-self: center;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.contact-card > h3 {
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.info-group {
+    display: flex;
+    align-items: center;
+}
+
+.info-group > img {
+    height: 15px;
+    margin-right: 8px;
+}
+
+.info-group > p {
+    margin-block: 3px;
+    font-size: 12px;
+    color: #2B283A;
+}
+
+.contact-card-searchbox{
+    display: flex;
+    margin-top: 0.5rem;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-card-searchbox > .searchbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    width: 65%;
+    padding: 0.5rem;
+}
+
+.contact-card-searchbox > .heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+.searchbox > .input-group{
+    margin-bottom: 0 !important;
+}
+
+.heading > h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    background: linear-gradient(18deg, #022583, #57c6e7, #0ab959, #04813c);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+}
