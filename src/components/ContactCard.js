@@ -32,7 +32,7 @@ const ContactCard = () => {
         <>
             <div className='contact-card-searchbox'>
                 <div className='heading'>
-                    <h1>IMAGE FINDER</h1>
+                    <h1>IMAGE ENGINE</h1>
                 </div>
                 <div className='searchbox'>
                     <InputGroup className="mb-3">
