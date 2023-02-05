@@ -1,18 +1,25 @@
 import React from 'react';
 import '../css/contactcard.css';
 
-const Card = (props) => {
+type CardProps = {
+    imageUrl: string
+    name: string
+    phoneNumber: string
+    email: string
+}
+
+const Card = ({imageUrl, name, phoneNumber, email}: CardProps): JSX.Element => {
     return (
         <div className="contact-card">
-            <img src={props.imageUrl} alt={props.name}/>
-            <h2>{props.name}</h2>
+            <img src={imageUrl} alt={name}/>
+            <h2>{name}</h2>
             <div className="info-group">
                 <img src={require("../images/phone-icon.png")} alt="phone-icon"/>
-                <p>{props.phoneNumber}</p>
+                <p>{phoneNumber}</p>
             </div>
             <div className="info-group">
                 <img src={require("../images/mail-icon.png")} alt="mail-icon" />
-                <p>{props.email}</p>
+                <p>{email}</p>
             </div>
         </div>
     )

@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     gap: 40px;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .contact-card {
@@ -60,30 +61,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0.5rem;
     width: 65%;
     padding: 0.5rem;
 }
 
 .contact-card-searchbox > .heading{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-}
-
-.searchbox > .input-group{
-    margin-bottom: 0 !important;
-}
-
-.heading > h1{
+    margin: auto;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    background-clip: text;
     background: linear-gradient(18deg, #022583, #57c6e7, #0ab959, #04813c);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
 }
 
+.searchbox > .input-group{
+    margin-bottom: 0 !important;
+}
 
 @media only screen and (max-width: 600px) {
     .contact-card{

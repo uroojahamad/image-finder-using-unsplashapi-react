@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import Card from './Cards';
+import Card from './Card';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { Result } from './types';
 
-const ContactCard = () => {
+const ImageFeed = () => {
 
-    const [cardData, setCardData] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [searchText, setSeacrhText] = useState('');
+    const [cardData, setCardData] = useState<Result[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [searchText, setSeacrhText] = useState<string>('');
 
-    const fecthDataFromAPI =async () => {
-       const response = await axios.get(`https://api.unsplash.com/search/photos?page=1&query=${searchText === '' ? 'husky' : searchText}&client_id=JHqEB7c-97RWsnUQWyOQIpF04Cr0KVJmHP5oN4n5xRs`)
-        setCardData(response?.data?.results)
-        setLoading(false)
+    const fecthDataFromAPI = async () => {
+        try{
+            const response = await axios.get(`https://api.unsplash.com/search/photos?page=1&query=${searchText === '' ? 'husky' : searchText}&client_id=JHqEB7c-97RWsnUQWyOQIpF04Cr0KVJmHP5oN4n5xRs`)
+            setCardData(response?.data?.results)
+            setLoading(false);
+        }
+        catch(error){
+            console.log(error);
+        }
     }
 
     useEffect(() => {
@@ -26,13 +32,11 @@ const ContactCard = () => {
     const search = () =>{
         fecthDataFromAPI();
     }
-    console.log(cardData);
+   
     return (
         <>
             <div className='contact-card-searchbox'>
-                <div className='heading'>
-                    <h1>IMAGE ENGINE</h1>
-                </div>
+                <h1 className='heading'>IMAGE ENGINE</h1>
                 <div className='searchbox'>
                     <InputGroup className="mb-3">
                         <Form.Control
@@ -65,4 +69,4 @@ const ContactCard = () => {
     )
 }
 
-export default ContactCard;
+export default ImageFeed;
